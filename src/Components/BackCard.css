@@ -1,0 +1,43 @@
+.card-box {
+    width: 340px;
+    height: 225px;
+    background: linear-gradient(45deg, blueviolet, deeppink);
+    position: absolute;
+    top: 100px;
+    z-index: 1;
+    border-radius: 5px;
+}
+.black-stripe{
+    width: 100%;
+    background-color: black;
+    height: 40px;
+    margin-top: 20px;
+}
+h2{
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 15px;
+    color: white;
+    font-size: 15px;
+}
+.white-stripe{
+    margin: 5px auto;
+    height: 45px;
+    border-radius: 5px;
+    width: 90%;
+    background-color: white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 10px;
+}
+.cvc-number{
+    color: grey;
+    font-weight: 600;
+}
+img{
+    width: 60px;
+    margin-top: 15px;
+    float: right;
+    margin-right: 15px;
+}
