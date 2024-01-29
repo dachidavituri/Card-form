@@ -4,6 +4,7 @@
   position: relative;
   max-width: 600px;
   border-radius: 5px;
+  
 }
 form {
   margin-top: 150px;
@@ -37,4 +38,19 @@ button {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+
 }
+button:hover{
+  opacity: 0.8;
+}
+.error-message{
+  color: red;
+  font-size: 12px;
+  margin-top: 2px;
+  text-align: right;
+  font-style: italic;
+}
+.error{
+  border: 1px solid red;
+}
+

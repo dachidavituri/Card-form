@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+// validation only fill submit
 import "./App.css";
 import { useState } from "react";
 import FrontCard from "./Components/FrontCard";
@@ -23,11 +24,40 @@ function App() {
     year: "",
     cvc: "",
   });
+  const [error, setError] = useState({
+    number: false,
+    name: false,
+    month: false,
+    year: false,
+    cvc: false
+  })
   const SubmitForm = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     console.log(user);
-
-    setSubmitted(true);
+    const containsNumber = /\d/.test(user.name)
+    const numericMonth = Number(user.month)
+    const numericYear = Number(user.year)
+    let hasError = false
+    if(user.number.length !== 19){
+      setError((prevError) => ({ ...prevError, number: true }));
+      hasError = true
+    }if(containsNumber || user.name === "" || user.name.length < 4){
+      setError((prevError) => ({ ...prevError, name: true }));
+      hasError = true
+    }if(user.cvc.length !== 3){
+      setError((prevError) => ({ ...prevError, cvc: true }));
+      hasError = true
+    }if (isNaN(numericMonth) || numericMonth > 12 || numericMonth < 1) {
+      setError((prevError) => ({ ...prevError, month: true }));
+      hasError = true
+    }if (isNaN(numericYear) || user.year == '') {
+      setError((prevError) => ({ ...prevError, year: true }));
+      hasError = true
+    }
+    if(!hasError){
+      setSubmitted(true)
+    }
+    
   };
   return (
     <div className="App">
@@ -43,13 +73,15 @@ function App() {
       )}
 
       {submitted ? (
-        <Thank setSubmitted={setSubmitted} setUser={setUser} />
+        <Thank setSubmitted={setSubmitted} setUser={setUser} setError={setError}/>
       ) : (
         <Form
           user={user}
           setUser={setUser}
           SubmitForm={SubmitForm}
           setCvcHovered={setCvcHovered}
+          error={error}
+          setError={setError}
         />
       )}
     </div>

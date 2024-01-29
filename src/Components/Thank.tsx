@@ -10,8 +10,17 @@ interface ThankProps {
       cvc: string;
     }>
   >;
+  setError: React.Dispatch<
+    React.SetStateAction<{
+      number: boolean;
+      name: boolean;
+      month: boolean;
+      year: boolean;
+      cvc: boolean;
+    }>
+  >;
 }
-function Thank({ setSubmitted, setUser }: ThankProps) {
+function Thank({ setSubmitted, setUser, setError }: ThankProps) {
   const handleClick = () => {
     setSubmitted(false);
     setUser({
@@ -20,6 +29,13 @@ function Thank({ setSubmitted, setUser }: ThankProps) {
       month: "",
       year: "",
       cvc: "",
+    });
+    setError({
+      number: false,
+      name: false,
+      month: false,
+      year: false,
+      cvc: false,
     });
   };
   return (
