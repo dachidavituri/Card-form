@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Card-form/static/css/main.008e2e94.css",
+    "main.js": "/Card-form/static/js/main.bab6dd3a.js",
+    "static/js/787.b5301075.chunk.js": "/Card-form/static/js/787.b5301075.chunk.js",
+    "static/media/chip.png": "/Card-form/static/media/chip.f88a902d8d270caaf1ac.png",
+    "index.html": "/Card-form/index.html",
+    "main.008e2e94.css.map": "/Card-form/static/css/main.008e2e94.css.map",
+    "main.bab6dd3a.js.map": "/Card-form/static/js/main.bab6dd3a.js.map",
+    "787.b5301075.chunk.js.map": "/Card-form/static/js/787.b5301075.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.008e2e94.css",
+    "static/js/main.bab6dd3a.js"
+  ]
+}
